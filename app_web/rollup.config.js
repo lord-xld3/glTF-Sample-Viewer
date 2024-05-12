@@ -8,6 +8,7 @@ import alias from '@rollup/plugin-alias';
 import replace from '@rollup/plugin-replace';
 import json from '@rollup/plugin-json';
 import {wasm} from "@rollup/plugin-wasm";
+import terser from '@rollup/plugin-terser';
 
 export default {
     input: 'src/main.js',
@@ -53,5 +54,6 @@ export default {
             'vue': 'vue/dist/vue.esm.js'
         }),
         commonjs(),
+        terser(),
     ]
 };
